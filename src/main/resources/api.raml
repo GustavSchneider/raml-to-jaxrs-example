@@ -1,0 +1,45 @@
+#%RAML 1.0
+version: v1
+baseUri: http://example.com/{version}/netconf
+description: Example Project
+protocols: [ HTTP, HTTPS ]
+
+title: Example Project
+
+types:
+  MyPostRequest:
+    type: |
+      {
+        "type": "object",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$ref": "https://gist.githubusercontent.com/GustavSchneider/038bf20d59fd6f9cebdd401259daf074/raw/8cf2e770681ee5fb2d13d2e7966c15500d7cb433/schema.json#/definitions/myPostRequest"
+      }
+  MyPostResponse:
+    type: |
+      {
+        "type": "object",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$ref": "https://gist.githubusercontent.com/GustavSchneider/038bf20d59fd6f9cebdd401259daf074/raw/8cf2e770681ee5fb2d13d2e7966c15500d7cb433/schema.json#/definitions/myPostResponse"      
+      }
+  MyPostError:
+    type: |
+      {
+        "type": "object",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$ref": "https://gist.githubusercontent.com/GustavSchneider/038bf20d59fd6f9cebdd401259daf074/raw/8cf2e770681ee5fb2d13d2e7966c15500d7cb433/schema.json#/definitions/myPostError"      
+      }
+      
+/myendpoint:
+  post:
+    body:
+      application/json:
+        type: MyPostRequest
+    responses:
+      200:
+        body:
+          application/json:
+            type: MyPostResponse
+      400:
+        body:
+          application/json:
+            type: MyPostError

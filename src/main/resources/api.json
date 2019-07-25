@@ -1,0 +1,37 @@
+{
+  "definitions": {
+    "myPostRequest": {
+      "type": "object",
+      "javaType": "com.mycompany.types.MyPostRequest",
+      "properties": {
+        "data": {
+          "type": "string"
+        }
+      },
+      "required": ["data"]
+    },
+    "myPostResponse": {
+      "type": "object",
+      "javaType": "com.mycompany.types.MyPostResponse",
+      "properties": {
+        "data": {
+          "type": "string"          
+        }
+      },
+      "required": ["data"]
+    },
+    "myPostError": {
+      "type": "object",
+      "javaType": "com.mycompany.types.MyPostError",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }        
+      },
+      "required": ["status", "title"]
+    }
+  }
+}
