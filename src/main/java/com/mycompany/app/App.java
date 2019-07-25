@@ -1,4 +1,4 @@
-package com.ericsson.app;
+package com.mycompany.app;
 
 import java.io.Closeable;
 import java.net.URI;
